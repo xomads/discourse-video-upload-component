@@ -1,0 +1,17 @@
+{
+  "name": "Video Upload",
+  "component": true,
+  "about_url": "https://github.com/xomads/discourse-video-upload",
+  "license_url": "https://github.com/xomads/discourse-video-upload/blob/main/LICENSE",
+  "authors": "https://meta.discourse.org/u/ti0",
+  "theme_version": 0.1,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {
+  },
+  "color_schemes": {
+  },
+  "modifiers": {
+  },
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+}
