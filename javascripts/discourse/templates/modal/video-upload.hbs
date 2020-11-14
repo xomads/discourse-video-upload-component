@@ -1,48 +1,48 @@
 <script async defer src="https://apis.google.com/js/api.js" id="gapiScript"></script>
 
 {{#d-modal-body
-        title="video_upload"
+        title=(theme-prefix "upload.video")
         class="video-upload-modal"
         }}
     <div class="video-details">
         {{input type="file" id="video-file" accept="video/*" }}
         {{#if youtubeEnabled}}
-            <label for=video-scope">Privacy level</label>
-            {{#if vimeoEnabled}}<small>Only applies for YouTube uploads. Uploads to Vimeo will be visible to <b>{{vimeoUploadScope}}</b> by default.</small>{{/if}}
+            <label for=video-scope">{{theme-i18n 'details.privacy'}}</label>
+            {{#if vimeoEnabled}}<small>{{theme-i18n 'details.privacy-note'}}: <b>{{vimeoUploadScope}}</b></small>{{/if}}
             <select id="video-scope">
-                <option value="unlisted">Unlisted</option>
-                <option value="public">Public</option>
-                <option value="private">Private</option>
+                <option value="unlisted">{{theme-i18n 'details.scope.unlisted'}}</option>
+                <option value="public">{{theme-i18n 'details.scope.public'}}</option>
+                <option value="private">{{theme-i18n 'details.scope.private'}}</option>
             </select>
         {{/if}}
-        <label for=video-title">Title</label> {{input type="text" id="video-title" placeholder="Video Title" }}
-        <label for=video-scope">Description</label> {{input type="text" id="video-description" placeholder="Video Description" }}
+        <label for=video-title">{{theme-i18n 'details.title'}}</label> {{input type="text" id="video-title" placeholder="Video Title" }}
+        <label for=video-scope">{{theme-i18n 'details.description'}}</label> {{input type="text" id="video-description" placeholder="Video Description" }}
     </div>
 
     <div class="video-upload-status">
         {{#if isAuthing}}
-            Authenticating...
+            {{theme-i18n 'status.authenticating'}} <div class="spinner"></div>
         {{/if}}
         {{#if isUploading}}
-            Uploading {{uploadProgress}}%
+            {{theme-i18n 'status.uploading'}} {{uploadProgress}}%
         {{/if}}
         {{#if isProcessing}}
-            Transcoding video <div class="spinner"></div>
+            {{theme-i18n 'status.transcoding'}} <div class="spinner"></div>
         {{/if}}
         {{#if processingError}}
-            <span style="color: red">Error transcoding video.</span>
+            <span style="color: red">{{theme-i18n 'status.error.transcode'}}</span>
         {{/if}}
         {{#if uploadError}}
-            <span style="color: red">Error uploading video: {{{uploadError}}}</span>
+            <span style="color: red">{{theme-i18n 'status.error.upload'}}: {{{uploadError}}}</span>
         {{/if}}
     </div>
 
     <div class="modal-footer">
         {{#if vimeoEnabled}}
-            {{d-button action=(action "vimeoUpload") id="vimeo-upload-btn" class="btn-primary" icon="fab-vimeo-v" label="upload-vimeo"}}
+            {{d-button action=(action "vimeoUpload") id="vimeo-upload-btn" class="btn-primary" icon="fab-vimeo-v" label=(theme-prefix 'upload.vimeo')}}
         {{/if}}
         {{#if youtubeEnabled}}
-            {{d-button action=(action "youtubeUpload") id="youtube-upload-btn" class="btn-primary" icon="fab-youtube" label="upload-youtube"}}
+            {{d-button action=(action "youtubeUpload") id="youtube-upload-btn" class="btn-primary" icon="fab-youtube" label=(theme-prefix 'upload.youtube')}}
         {{/if}}
     </div>
 {{/d-modal-body}}

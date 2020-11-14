@@ -1,4 +1,21 @@
 en:
-  upload-vimeo: "Upload to Vimeo"
-  upload-youtube: "Upload to YouTube"
-  video_upload: "Upload a video"
+  upload:
+    vimeo: "Upload to Vimeo"
+    youtube: "Upload to YouTube"
+    video: "Upload a video"
+  status:
+    uploading: "Uploading"
+    transcoding: "Transcoding video"
+    authenticating: "Authenticating"
+    error:
+      transcode: "Error transcoding video"
+      upload: "Error uploading video"
+  details:
+    title: "Title"
+    description: "Description"
+    privacy: "Privacy level"
+    privacy-note: "Only applies for YouTube uploads. Uploads to Vimeo will be visible to"
+    scope:
+      unlisted: "Unlisted"
+      private: "Private"
+      public: "Public"
