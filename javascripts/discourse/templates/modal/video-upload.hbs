@@ -5,7 +5,7 @@
         class="video-upload-modal"
         }}
     <div class="video-details">
-        {{input type="file" id="video-file" accept="video/*" }}
+        {{input type="file" id="video-file" accept="video/mp4,video/x-m4v,video/*" }}
         {{#if youtubeEnabled}}
             <label for=video-scope">{{theme-i18n 'details.privacy'}}</label>
             {{#if vimeoEnabled}}<small>{{theme-i18n 'details.privacy-note'}}: <b>{{vimeoUploadScope}}</b></small>{{/if}}

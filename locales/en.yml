@@ -1,8 +1,8 @@
 en:
   upload:
+    video: "Upload a video"
     vimeo: "Upload to Vimeo"
     youtube: "Upload to YouTube"
-    video: "Upload a video"
   status:
     uploading: "Uploading"
     transcoding: "Transcoding video"
